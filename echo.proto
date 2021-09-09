@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Protos.Echo";
+
+package helloworld;
+
+service EchoService {
+	rpc Repeat(Echo) returns (Echo);
+}
+
+message Echo {
+	string name = 1;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "response_message.proto";
+
+option csharp_namespace = "Protos.Posts";
+
+
+service PostService {
+	rpc upsert(Post) returns (Response);
+	rpc search(Query) returns (Response);
+}
+
+message Post {
+	string title = 1;
+	string content = 2;
+	repeated string tag = 3;
+}
+
+message Query {
+	string id = 1;
+}
