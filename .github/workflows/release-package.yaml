@@ -22,8 +22,6 @@ jobs:
           source-url: https://nuget.pkg.github.com/giovanebribeiro/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Nuget auth
-        run: dotnet nuget add source --username giovanebribeiro --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/giovanebribeiro/index.json"
       - name: Install dependencies
         run: dotnet restore
       - name: Build
@@ -31,4 +29,4 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release 
       - name: Publish
-        run: dotnet nuget push bin/Release/*.nupkg
+        run: dotnet nuget push bin/Release/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }}
