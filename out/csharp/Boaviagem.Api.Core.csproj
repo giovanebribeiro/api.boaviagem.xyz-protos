@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="**/*.proto" GrpcServices="None"/>
-    <Protobuf Update="**/echo.proto;**/post.proto" GrpcServices="Both"/>
+    <Protobuf Include="../../src/*.proto" GrpcServices="None"/>
+    <Protobuf Update="../../src/echo.proto;../../src/post.proto" GrpcServices="Both"/>
   </ItemGroup>
 
   <ItemGroup>

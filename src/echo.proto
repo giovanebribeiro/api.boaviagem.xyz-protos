@@ -1,13 +1,11 @@
 syntax = "proto3";
 
-option csharp_namespace = "Protos.Echo";
-
-package helloworld;
+option csharp_namespace = "Boaviagem.Api.Core.Echo";
 
 service EchoService {
 	rpc Repeat(Echo) returns (Echo);
 }
 
 message Echo {
-	string name = 1;
+	string message = 1;
 }
