@@ -27,6 +27,6 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Pack
-        run: dotnet pack --configuration Release 
+        run: dotnet pack --configuration Release  --no-restore
       - name: Publish
         run: dotnet nuget push bin/Release/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }}

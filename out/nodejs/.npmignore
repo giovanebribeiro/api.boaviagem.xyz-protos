@@ -1,0 +1,10 @@
+*.log
+node_modules/
+*.swo
+*.swp
+*~
+test
+README.md
+.gitignore
+.travis.yml
+build.js

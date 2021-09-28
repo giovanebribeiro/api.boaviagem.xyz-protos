@@ -104,5 +104,8 @@ dist
 .tern-port
 
 # .NET files
-bin/
-obj/
+out/csharp/bin/
+out/csharp/obj/
+
+# Node.js generated files
+out/nodejs/*_pb.js

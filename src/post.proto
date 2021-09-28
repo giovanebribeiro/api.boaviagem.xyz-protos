@@ -1,19 +1,26 @@
 syntax = "proto3";
 
 import "response_message.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 
-option csharp_namespace = "Protos.Posts";
-
+option csharp_namespace = "Boaviagem.Api.Core.Posts";
 
 service PostService {
 	rpc upsert(Post) returns (Response);
-	rpc search(Query) returns (Response);
+	rpc search(Query) returns (ResponseCollection);
+	rpc delete(Query) returns (google.protobuf.Empty);
 }
 
 message Post {
-	string title = 1;
-	string content = 2;
-	repeated string tag = 3;
+	string id = 1;
+	google.protobuf.Timestamp createdAt = 2;
+	google.protobuf.Timestamp updatedAt = 3;
+	string title = 4;
+	string body = 5;
+	string headImage = 6;
+	repeated string tag = 7;
+	bool draft = 8;
 }
 
 message Query {
