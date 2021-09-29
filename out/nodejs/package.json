@@ -4,7 +4,8 @@
   "description": "Contém os arquivos de contrato para as operações da API (Node.js)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"not implemented yet\""
+    "test": "echo \"not implemented yet\"",
+    "build": "node ./build.js"
   },
   "repository": {
     "type": "git",
