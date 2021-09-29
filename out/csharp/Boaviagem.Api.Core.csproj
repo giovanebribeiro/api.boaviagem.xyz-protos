@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>Boaviagem.Api.Core</PackageId>
-    <Version>0.0.0</Version>
+    <Version>0.1.0</Version>
     <Authors>Giovane Boaviagem Ribeiro</Authors>
     <Company>Home</Company>
     <PackageDescription>Contém os arquivos de contrato para as operações da API</PackageDescription>
