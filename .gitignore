@@ -109,3 +109,5 @@ out/csharp/obj/
 
 # Node.js generated files
 out/nodejs/*_pb.js
+
+**/*.csproj-e
