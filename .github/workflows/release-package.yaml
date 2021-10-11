@@ -1,8 +1,8 @@
 name: Core Package
 
-on: [push]
-#  release:
-#    types: [created]
+on: 
+  release:
+    types: [created]
 
 jobs:
   nodejs:
