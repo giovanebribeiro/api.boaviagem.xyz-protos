@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option csharp_namespace = "Boaviagem.Api.Core.Common";
+
+import "google/protobuf/any.proto";
+
+/*
+ * Representa os tipos de dados possíveis
+ */
+enum DataType {
+	STRING = 0;
+	INTEGER = 1;
+	FLOAT = 2;
+	BOOL = 3;
+	ANY = 4; // qualquer outro tipo 
+}
+
+/*
+ * Representa um link. Normalmente se localizam dentro de listas
+ * dentro do objeto principal
+ */
+message CollectionJSONLink {
+	// o link em si
+	string href = 1;
+	// uma descrição do link
+	string rel = 2;
+}
+
+/*
+ * Representa um dado (informação) a ser representado
+ */
+message CollectionJSONData {
+	// nome do dado
+	string name = 1;
+	// valor do dado
+	string value = 2;
+	// tipo do dado (Valores possíveis estão presentes no enum DataType)
+	DataType type = 3;
+	// Alguma mensagem referente ao dado em si
+	string prompt = 4;
+}
+
+/*
+ * Representa um item da coleção
+ */
+message CollectionJSONItem {
+	// representação do item (URL)
+	string href = 1;
+	// array contendo os objetos de dado
+	repeated CollectionJSONData data = 2;
+	// array contendo os links dos dados ou de outras representações relacionadas ao item.
+	repeated CollectionJSONLink links = 3;
+}
+
+message Response {
+	int32 statusCode = 1;
+	string message = 2;
+	google.protobuf.Any data = 3;
+}
+
+message ResponseCollection {
+	int32 statusCode = 1;
+	string previous = 2;
+	string next = 3;
+	repeated google.protobuf.Any data = 4;
+}
