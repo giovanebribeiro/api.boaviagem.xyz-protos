@@ -1,4 +1,4 @@
-# api.boaviagem.xyz-protos
+# api.boaviagemribeiro.com (Contracts)
 
 Contém os arquivos [proto](https://developers.google.com/protocol-buffers/docs/proto) para comunicação entre os serviços da minha API.
 
