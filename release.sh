@@ -63,7 +63,7 @@ if [ "$RELEASE" == "1" ]; then
 	echo "* Creating Github release"
 	API_JSON=$(printf '{"tag_name": "v%s","target_commitish": "master","name": "v%s","body": "Release of version %s","draft": false,"prerelease": false}' $VERSION $VERSION $VERSION)
 	OWNER=giovanebribeiro
-	REPO=api.boaviagem.xyz-contracts
+	REPO=contracts.api.boaviagemribeiro.com.br
 	curl -H "Authorization: token $GITHUB_TOKEN" -H 'Accept: application/vnd.github.v3+json' --data "$API_JSON" https://api.github.com/repos/$OWNER/$REPO/releases
 	echo "* Creating Github release (OK)"
 fi
